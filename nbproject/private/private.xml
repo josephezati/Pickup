@@ -6,6 +6,9 @@
             <file>file:/C:/wamp/www/Pickup/main.js</file>
             <file>file:/C:/wamp/www/Pickup/db_connection.php</file>
             <file>file:/C:/wamp/www/Pickup/dashboard.php</file>
+            <file>file:/C:/wamp/www/Pickup/pages/settings/parent/select_parent.php</file>
+            <file>file:/C:/wamp/www/Pickup/error_pages/500.php</file>
+            <file>file:/C:/wamp/www/Pickup/pages/child/select_child.php</file>
         </group>
     </open-files>
 </project-private>

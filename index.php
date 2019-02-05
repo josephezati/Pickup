@@ -35,7 +35,7 @@ padding : 50px 0;
     <h2 class="text-center " style="color: #0056b3; font-weight: 800;">PICK & DROP</h2>
     <div class="container">
 	<div class="row">
-            
+    <form action="dashboard.php" method="post">       
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">Login Now</h2>
 		    <div class="login-form">
@@ -58,6 +58,8 @@ padding : 50px 0;
         </div>
 <div class="copy-text"><a href="reset_password.php">Forgot password?</a></div>
 		</div>
+		
+		</form>
 		<div class="col-md-8 banner-sec">
             
             <div class="carousel-inner" role="listbox">

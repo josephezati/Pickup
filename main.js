@@ -1,21 +1,6 @@
-// function SubmitFormData() {
-    // var fname = $("#fname").val();
-    // var lname = $("#lname").val();
-    // var tel = $("#tel").val();
-    // var email = $("#mail").val();
-    // var usertype = $("#user").val();
-    // var username = $("#username").val();
-    // var passwd = $("#password").val();
-//     $.post("queries_handle.php", { fname: fname, lname: lname, email: email, phone: tel, type: usertype, name: username, pswd: passwd },
-//     function(data) {
-// 	 $('#results').html(data);
-// 	 $('#admin-form')[0].reset();
-//     });
-// }
 $(document).ready(function() {
-
-    $('#submit').click(function(){
-        $.post("pages/admin/new_user.php",{
+    $('#submit').click(function() {
+        $.post("pages/admin/new_user.php", {
             fname: $('#fname').val(),
             lname: $('#lname').val(),
             phone: $('#tel').val(),
@@ -23,8 +8,8 @@ $(document).ready(function() {
             type: $('#user').val(),
             name: $('#username').val(),
             passwd: $('#password').val()
-        },function(data){
-            
+        }, function(data) {
+
             $('#admin-notify').html(data).show();
             $('#fname').val('');
             $('#lname').val('');
@@ -33,123 +18,142 @@ $(document).ready(function() {
             $('#user').val('');
             $('#username').val('');
             $('#password').val('');
-            $('#admin-notify').html(data).hide(3000);
+            // $('#admin-notify').html(data).fadeOut(3000);
         });
 
     });
-
-});
-$(document).ready(function(){
-    setInterval(function(){
-        $('#admin-data').load('pages/admin/select_user.php')},500);
-});
-$(document).ready(function() {
-    $('#drv_submit').click(function(){
-        $.post("pages/driver/new_driver.php",{
+    $('#drv_submit').click(function() {
+        $.post("pages/driver/new_driver.php", {
             fname: $('#drvfname').val(),
             lname: $('#drvlname').val(),
             phone: $('#drvtel').val(),
             permit: $('#drvpermit').val(),
             plate_num: $('#drvcarnumber').val()
-        },function(data){
-            
+        }, function(data) {
+
             $('#driver-notify').html(data).show();
             $('#drvfname').val('');
             $('#drvlname').val('');
             $('#drvtel').val('');
             $('#drvpermit').val('');
             $('#drvcarnumber').val('');
-            $('#driver-notify').html(data).hide(5000);
+            // $('#driver-notify').html(data).fadeOut(3000);
         });
     });
-});
-$(document).ready(function(){
-    setInterval(function(){
-        $('#driver-data').load('pages/driver/select_driver.php'); 
-    },500);
-});
-
-$(document).ready(function() {
-    $('#psubmit').click(function(){
-        $.post("pages/parent/new_parent.php",{
+    $('#psubmit').click(function() {
+        $.post("pages/parent/new_parent.php", {
             fname: $('#pfname').val(),
             lname: $('#plname').val(),
             phone: $('#ptel').val(),
             email: $('#pmail').val(),
             village: $('#pvillage').val()
-        },function(data){
-            
+        }, function(data) {
+
             $('#parent-notify').html(data).show();
             $('#pfname').val('');
             $('#plname').val('');
             $('#ptel').val('');
             $('#pmail').val('');
             $('#pvillage').val('');
-            // $('#parent-notify').html(data).hide(5000);
+            // $('#parent-notify').html(data).fadeOut(3000);
         });
     });
-
-});
-$(document).ready(function(){  
-    $('#chsubmit').click(function(){
-        $.post("pages/child/new_child.php",{
+    $('#chsubmit').click(function() {
+        $.post("pages/child/new_child.php", {
             fname: $('#chfname').val(),
             lname: $('#chlname').val(),
-            school: $('#chschool').val(),
+            school: $('#childschool').val(),
             level: $('#chclass').val(),
-            parent: $('#chparent').val(),
+            parent: $('#childparent').val(),
             village: $('#chvillage').val()
-        },function(data){
-            
+        }, function(data) {
+
             $('#child-notify').html(data).show();
             $('#chfname').val('');
             $('#chlname').val('');
-            $('#chschool').val('');
+            $('#childschool').val('');
             $('#chclass').val('');
-            $('#chparent').val('');
+            $('#childparent').val('');
+            $('#chdistrict').val('');
+            $('#chdivision').val('');
             $('#chvillage').val('');
-            // $('#parent-notify').html(data).hide(5000);
+            // $('#child-notify').html(data).fadeOut(3000);
         });
     });
-});
-$(document).ready(function(){
-    // setInterval(function(){
-        $('.chparent').load('pages/other/select/select_parent.php'); 
-    // },500);
-});
-$(document).ready(function(){
-    // setInterval(function(){
-        $('.district').load('pages/other/select/select_district.php'); 
-    // },500);
-});
-$(document).ready(function(){
-    // setInterval(function(){
-        $('.division').load('pages/other/select/select_division.php'); 
-    // },500);
-});
-$(document).ready(function(){
-    // setInterval(function(){
-        $('.cell').load('pages/other/select/select_village.php'); 
-    // },500);
-});
-$(document).ready(function(){
-    // setInterval(function(){
-        $('.school').load('pages/other/select/select_school.php'); 
-    // },500);
-});
-$(document).ready(function(){
-    setInterval(function(){
-        $('#parent-data').load('pages/parent/select_parent.php'); 
-    },500);
-});
-$(document).ready(function(){
-    setInterval(function(){
-        $('#child-data').load('pages/child/select_child.php'); 
-    },500);
+    $('#schoolsubmit').click(function() {
+        $.post("pages/settings/system/new_school.php", {
+            name: $('#idnewschool').val()
+        }, function(data) {
+            $('#school-notify').html(data).show();
+            $('#idnewschool').val('');
+            // $('#school-notify').html(data).fadeOut(3000);
+        });
+    });
+    $('.known-schools').load('pages/settings/system/select_school.php');
+    $('#divisionsubmit').click(function() {
+        $.post("pages/settings/system/new_division.php", {
+            dist: $('#sub_dist').val(),
+            division: $('#subcty').val()
+        }, function(data) {
+            $('#division-notify').html(data).show();
+            $('#sub_dist').val('');
+            $('#subcty').val('');
+        });
+    });
+    $('#villagesubmit').click(function() {
+        $.post("pages/settings/system/new_village.php", {
+            dist: $('#vil_dist').val(),
+            division: $('#vil_sub').val(),
+            village: $('#vil').val()
+        }, function(data) {
+            $('#village-notify').html(data).show();
+            $('#vil_dist').val('');
+            $('#vil_sub').val('');
+            $('#vil').val('');
+        });
+    });
+    $('#loginsubmit').click(function() {
+        $.post("pages/admin/authentication/login.php", {
+            user: $('#loginuser').serialize(),
+            password: $('#loginpassword').serialize()
+        }, function(data) {
+            if (data == $('#loginuser').val()) {
+                window.location = 'dashboard.php';
+            } else {
+                alert(data);
+            }
+        });
+    });
+
+    /*========================Load data when window loads============================*/
+    $('#admin-data').load('pages/admin/select_user.php');
+    $('#driver-data').load('pages/driver/select_driver.php');
+    $('.chparent').load('pages/other/select/select_parent.php');
+    $('.district').load('pages/other/select/select_district.php');
+    $('.division').load('pages/other/select/select_division.php');
+    $('.cell').load('pages/other/select/select_village.php');
+    $('.school').load('pages/other/select/select_school.php');
+
+    /*========================Refresh page after every 5 seconds*/
+    setInterval(function() {
+        $('#admin-data').load('pages/admin/select_user.php');
+        $('#driver-data').load('pages/driver/select_driver.php');
+        $('#parent-data').load('pages/parent/select_parent.php');
+        $('.user-accounts').load('pages/settings/administrator/select_users.php');
+        $('.driver-data').load('pages/settings/driver/select_driver.php');
+        $('.parent-account-data').load('pages/settings/parent/select_parent.php');
+        $('.location-data').load('pages/settings/system/select_location.php');
+        // $('.chparent').load('pages/other/select/select_parent.php');
+        // $('.district').load('pages/other/select/select_district.php'); 
+        // $('.division').load('pages/other/select/select_division.php'); 
+        // $('.cell').load('pages/other/select/select_village.php'); 
+        // $('.school').load('pages/other/select/select_school.php');
+        $('.child-data').load('pages/child/select_child.php');
+    }, 5000);
 });
 $(document).ready(function() {
-    $('#close').click(function(){
-            $('.alert').hide();
+    $('.alert').click(function() {
+        $(this).hide();
     });
 });
 

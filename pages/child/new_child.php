@@ -6,6 +6,9 @@ include'../../db_connection.php';
     $school = $_POST['school'];
 	$parent = $_POST['parent'];
 	$village = $_POST['village'];
+	if(empty($school)){
+		echo "No id found";
+	}
 	// $password =$_POST['passwd'];
 	$sql = "INSERT INTO child(fname,lname,idschool,class,idparent,idresidence) VALUES('$fname','$lname','$school','$level','$parent','$village')" or die(mysqli_error($conn));
 // }

@@ -10,38 +10,38 @@ while($row=mysqli_fetch_assoc($sql)){
 			$level = "Reception Class";
 			break;
 		case '2':
-			$level = "Reception Class";
+			$level = "Junior Kindergarten";
 			break;
 		case '3':
-			$level = "Reception Class";
+			$level = "Senior Kindergarten";
 			break;
 		case '4':
-			$level = "Reception Class";
+			$level = "P.1";
 			break;
 		case '5':
-			$level = "Reception Class";
+			$level = "P.2";
 			break;
 		case '6':
-			$level = "Reception Class";
+			$level = "P.3";
 			break;
 		case '7':
-			$level = "Reception Class";
+			$level = "P.4";
 			break;
 		case '8':
-			$level = "Reception Class";
+			$level = "P.5";
 			break;
 		case '9':
-			$level = "Reception Class";
+			$level = "P.6";
 			break;
 		case '10':
-			$level = "Reception Class";
+			$level = "P.7";
 			break;
 		
 		default:
 			# code...
 			break;
 	}
-	echo '<tr><td>'.$i.'</td><td>'.$row['fname'].' '.$row['lname'].'</td><td>'.$level.'</td><td>'.$row['school_name'].'</td><td>'.$row['cell'].'</td></tr>';
+	echo '<tr><td>'.$i.'</td><td>'.$row['fname'].' '.$row['lname'].'</td><td>'.$row['school_name'].'</td><td>'.$level.'</td><td>'.$row['cell'].'</td></tr>';
 	$i++;
 }
 }else{
