@@ -1,2 +1,2 @@
 # Pickup
-Mobile app for shuttle drivers
+Server side of a Mobile app for shuttle drivers
