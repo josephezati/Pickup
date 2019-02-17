@@ -7,7 +7,7 @@ if(isset($_POST['id'])){
 	$query = "DELETE FROM schedule WHERE id=?";
 	if($stmt = $con->prepare($query)){
 		//Bind id parameter to the query
-		$stmt->bind_param("id",$scheduleId);
+		$stmt->bind_param("i",$scheduleId);
 		$stmt->execute();
 		//Check if the schedule got deleted
 		if($stmt->affected_rows == 1){

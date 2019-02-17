@@ -15,7 +15,7 @@ if($stmt = $con->prepare($query)){
 		//Populate the movie array
 		$scheduleArray["id"] = $schId;
 		$scheduleArray["date"] = $schDate;
-		$result[]=$schArray;
+		$result[]=$scheduleArray;
 		
 	}
 	$stmt->close();

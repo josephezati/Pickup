@@ -4,7 +4,7 @@ $response = array();
 
 //Check for mandatory parameters
 if(isset($_POST['message'])&&isset($_POST['date'])&&isset($_POST['place'])&&isset($_POST['child_id'])){
-	$id = $_POST['message'];
+	$id = $_POST['id'];
 	$message = $_POST['message'];
 	$date = $_POST['date'];
 	$place = $_POST['place'];

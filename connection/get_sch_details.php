@@ -1,34 +1,34 @@
 <?php
 include 'db/db_connect.php';
-$movieArray = array();
+$scheduleArray = array();
 $response = array();
-//Check for mandatory parameter movie_id
-if(isset($_GET['movie_id'])){
-	$movieId = $_GET['movie_id'];
+//Check for mandatory parameter id
+if(isset($_GET['id'])){
+	$scheduleId = $_GET['id'];
 	//Query to fetch movie details
-	$query = "SELECT movie_name, genre, year, rating FROM movies WHERE movie_id=?";
+	$query = "SELECT message, date, place, child_id FROM schedule WHERE id=?";
 	if($stmt = $con->prepare($query)){
-		//Bind movie_id parameter to the query
-		$stmt->bind_param("i",$movieId);
+		//Bind id parameter to the query
+		$stmt->bind_param("i",$scheduleId);
 		$stmt->execute();
-		//Bind fetched result to variables $movieName, $genre, $year and $rating
-		$stmt->bind_result($movieName,$genre,$year,$rating);
+		//Bind fetched result to variables $message, $date, $place and $child_id
+		$stmt->bind_result($message,$date,$place,$child_id);
 		//Check for results		
 		if($stmt->fetch()){
 			//Populate the movie array
-			$movieArray["movie_id"] = $movieId;
-			$movieArray["movie_name"] = $movieName;
-			$movieArray["genre"] = $genre;
-			$movieArray["year"] = $year;
-			$movieArray["rating"] = round($rating,1);
+			$scheduleArray["id"] = $scheduleId;
+			$scheduleArray["message"] = $message;
+			$scheduleArray["date"] = $date;
+			$scheduleArray["place"] = $place;
+			$scheduleArray["child_id"] = round($child_id,1);
 			$response["success"] = 1;
-			$response["data"] = $movieArray;
+			$response["data"] = $scheduleArray;
 		
 		
 		}else{
 			//When movie is not found
 			$response["success"] = 0;
-			$response["message"] = "Movie not found";
+			$response["message"] = "Schedule not found";
 		}
 		$stmt->close();
 
@@ -41,9 +41,9 @@ if(isset($_GET['movie_id'])){
 	}
 
 }else{
-	//When the mandatory parameter movie_id is missing
+	//When the mandatory parameter id is missing
 	$response["success"] = 0;
-	$response["message"] = "missing parameter movie_id";
+	$response["message"] = "missing parameter id";
 }
 //Display JSON response
 echo json_encode($response);
