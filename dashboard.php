@@ -141,7 +141,7 @@
                             <div class="col-xs-12">
                                 <div class="nav-tabs-custom">
                                     <div class="card">
-                                        <ul class="nav nav-tabs" style="background:#555; ">
+                                        <ul class="nav nav-tabs" style="background:#555; " id="myTab">
                                             <li class="active"><a href="#admin" data-toggle="tab" ><i class="fa fa-user"></i>Administrator</a></li>
                                             <li><a href="#driver" data-toggle="tab"><i class="fa fa-car"></i>Driver</a></li>
                                             <li><a href="#parent" data-toggle="tab"><i class="fa fa-user"></i>Parent</a></li>
@@ -196,7 +196,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-row">
-                                                                            <div class="form-group col-md-12">
+                                                                            <div class="form-group col-md-6">
                                                                                 <label for="inputState">User type</label>
                                                                                 <select id="user" class="form-control select2-dropdown" name="user">
                                                                                     <option >Choose...</option>
@@ -204,6 +204,11 @@
                                                                                     <option value="2">User</option>
                                                                                 </select>
                                                                                 <label class="error" id="user_error" for="user">This field is required</label>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="inputState">School</label>
+                                                                                <select id="userschool" class="school form-control">
+                                                                                </select>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-row">
@@ -252,60 +257,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!--                                                                <div class="tab-pane " id="admin-routes">
-                                                                                                                                    <div class="col-md-12">
-                                                                                                                                        <div class="header">
-                                                                                                                                            <h4 class="title">New Routes</h4>
-                                                                                                                                        </div>
-                                                                                                                                        <form>
-                                                                                                                                            <div class="form-row">
-                                                                                                                                                <div class="form-group col-md-4">
-                                                                                                                                                    <label for="inputText">Route Name</label>
-                                                                                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter route name">
-                                                                                                                                                </div>
-                                                                                                                                                <div class="form-group col-md-4">
-                                                                                                                                                    <label for="inputState">Driver </label>
-                                                                                                                                                    <select id="inputState" class="form-control">
-                                                                                                                                                        <option selected>Choose...</option>
-                                                                                                                                                        <option>...</option>
-                                                                                                                                                    </select>
-                                                                                                                                                </div></div>
-                                                                                                                                        </form>
-                                                                                                                                    </div>
-                                                                                                                                    <div class="col-md-12">
-                                                                                                                                        <div class="header">
-                                                                                                                                            <h4 class="title">Routes</h4>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="content table-responsive table-full-width">
-                                                                                                                                            <table class="table table-hover table-striped">
-                                                                                                                                                <thead>
-                                                                                                                                                <th>ID</th>
-                                                                                                                                                <th>Name</th>
-                                                                                                                                                <th>Salary</th>
-                                                                                                                                                <th>Country</th>
-                                                                                                                                                <th>City</th>
-                                                                                                                                                </thead>
-                                                                                                                                                <tbody>
-                                                                                                                                                    <tr>
-                                                                                                                                                        <td>1</td>
-                                                                                                                                                        <td>Dakota Rice</td>
-                                                                                                                                                        <td>$36,738</td>
-                                                                                                                                                        <td>Niger</td>
-                                                                                                                                                        <td>Oud-Turnhout</td>
-                                                                                                                                                    </tr>
-                                                                                                                                                    <tr>
-                                                                                                                                                        <td>2</td>
-                                                                                                                                                        <td>Minerva Hooper</td>
-                                                                                                                                                        <td>$23,789</td>
-                                                                                                                                                        <td>Curaçao</td>
-                                                                                                                                                        <td>Sinaai-Waas</td>
-                                                                                                                                                    </tr>
-                                                                                                                                                </tbody>
-                                                                                                                                            </table>
-                                                                
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </div>-->
                                                                 <div class="tab-pane " id="admin-reports">
                                                                     <div class="header">
                                                                         <h4 class="title">Transaction History</h4>
@@ -349,63 +300,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="tab-pane " id="admin-settings">
-                                           
-                                                                    <div class="col-md-12 ">
-                                                                        <div class="header">
-                                                                            <h4 class="title">User Accounts Settings</h4>
-                                                                        </div>
-                                                                        <div class="content table-responsive table-full-width">
-                                                                            <table class="table table-default">
-                                                                                <thead>
-                                                                                <th>ID</th>
-                                                                                <th>Name</th>
-                                                                                <th>Telephone</th>
-                                                                                <th>Email</th>
-                                                                                <th>Username</th>
-                                                                                <th>Action</th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
-                                                                                        <td>Dakota Rice</td>
-                                                                                        <td>$36,738</td>
-                                                                                        <td>Niger</td>
-                                                                                        <td>$36,738</td>
-                                                                                        <td><a href="" class="text-success">Activate</a><a href="" class="text-warning"> Deactivate</a><a href="" class="text-danger"> Delete</a></td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-12 ">
-                                                                        <div class="header">
-                                                                            <h4 class="title">Finance settings</h4>
-                                                                        </div>
-                                                                        <div class="content table-responsive table-full-width">
-                                                                            <table class="table table-default">
-                                                                                <thead>
-                                                                                <th>ID</th>
-                                                                                <th>Fare(UGX)</th>
-                                                                                <th>Routes</th>
-                                                                                <th>Effective</th>
-                                                                                <th>Edit</th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
-                                                                                        <td>1500</td>
-                                                                                        <td>Kakoba,Ntare</td>
-                                                                                        <td>2018-12-03</td>
-                                                                                        <td><a href="" class="text-success">Edit</a></td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -484,64 +378,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!--                                                                <div class="tab-pane " id="admin-routes">
-                                                                                                                                    <div class="col-md-6" style="border-right: #000000 1px solid;">
-                                                                                                                                        <div class="header">
-                                                                                                                                            <h4 class="title">New Routes</h4>
-                                                                                                                                        </div>
-                                                                                                                                        <form>
-                                                                                                                                            <div class="form-row">
-                                                                                                                                                <div class="form-group col-md-6">
-                                                                                                                                                    <label for="inputText">Route Name</label>
-                                                                                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter route">
-                                                                                                                                                </div>
-                                                                                                                                                <div class="form-group col-md-6">
-                                                                                                                                                    <label for="inputState">Driver</label>
-                                                                                                                                                    <select id="inputState" class="form-control">
-                                                                                                                                                        <option selected>Choose...</option>
-                                                                                                                                                        <option>...</option>
-                                                                                                                                                    </select>
-                                                                                                                                                    </div>
-                                                                                                                                            </div>
-                                                                                                                                            <div class=" form-row">
-                                                                                                                                                <div class="form-group col-md-3 pull-left"><input type="submit" value="Register" class="btn btn-default"/></div>
-                                                                                                                                            </div>
-                                                                                                                                        </form>
-                                                                                                                                    </div>
-                                                                                                                                    <div class="col-md-6 " style="border-left: #000000 1px solid;">
-                                                                                                                                        <div class="header">
-                                                                                                                                            <h4 class="title">Available System Administrators</h4>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="content table-responsive table-full-width">
-                                                                                                                                            <table class="table table-hover table-striped">
-                                                                                                                                                <thead>
-                                                                                                                                                <th>ID</th>
-                                                                                                                                                <th>Name</th>
-                                                                                                                                                <th>Salary</th>
-                                                                                                                                                <th>Country</th>
-                                                                                                                                                <th>City</th>
-                                                                                                                                                </thead>
-                                                                                                                                                <tbody>
-                                                                                                                                                    <tr>
-                                                                                                                                                        <td>1</td>
-                                                                                                                                                        <td>Dakota Rice</td>
-                                                                                                                                                        <td>$36,738</td>
-                                                                                                                                                        <td>Niger</td>
-                                                                                                                                                        <td>Oud-Turnhout</td>
-                                                                                                                                                    </tr>
-                                                                                                                                                    <tr>
-                                                                                                                                                        <td>2</td>
-                                                                                                                                                        <td>Minerva Hooper</td>
-                                                                                                                                                        <td>$23,789</td>
-                                                                                                                                                        <td>Curaçao</td>
-                                                                                                                                                        <td>Sinaai-Waas</td>
-                                                                                                                                                    </tr>
-                                                                                                                                                </tbody>
-                                                                                                                                            </table>
-                                                                
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </div>-->
                                                                 <div class="tab-pane " id="driver-reports">
                                                                     <div class="col-md-12 ">
                                                                         <div class="header">
@@ -581,97 +417,6 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="tab-pane " id="driver-settings">
-                                                                    <div class="col-md-6" style="border-right: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">New Routes</h4>
-                                                                        </div>
-                                                                        <form>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">First Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter first name">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Last Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter other name">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Telephone</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter telephone number">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Enter email address">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputState">User type</label>
-                                                                                    <select id="inputState" class="form-control">
-                                                                                        <option selected>Choose...</option>
-                                                                                        <option>...</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputText">Username</label>
-                                                                                    <input type="text" class="form-control" id="inpuText" placeholder="Enter username">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Password</label>
-                                                                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Type password">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="password" class="form-control" id="inpuPassword4" placeholder="Retype password">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class=" form-row">
-                                                                                <div class="form-group col-md-3 pull-left"><input type="submit" value="Register" class="btn btn-default"/></div>
-                                                                                <div class="form-group col-md-3 pull-right"><input type="reset" value="Cancel" class="btn btn-default "/></div>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                    <div class="col-md-6 " style="border-left: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">Available System Administrators</h4>
-                                                                        </div>
-                                                                        <div class="content table-responsive table-full-width">
-                                                                            <table class="table table-hover table-striped">
-                                                                                <thead>
-                                                                                <th>ID</th>
-                                                                                <th>Name</th>
-                                                                                <th>Salary</th>
-                                                                                <th>Country</th>
-                                                                                <th>City</th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
-                                                                                        <td>Dakota Rice</td>
-                                                                                        <td>$36,738</td>
-                                                                                        <td>Niger</td>
-                                                                                        <td>Oud-Turnhout</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td>2</td>
-                                                                                        <td>Minerva Hooper</td>
-                                                                                        <td>$23,789</td>
-                                                                                        <td>Curaçao</td>
-                                                                                        <td>Sinaai-Waas</td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -687,13 +432,14 @@
                                                         <div class="nav-tabs-custom">
                                                             <ul class="nav nav-tabs">
                                                                 <li class="active"><a href="#parent-new" data-toggle="tab"><i class="fa fa-user"></i>New Parent</a></li>
+                                                                <li ><a href="#parent-register" data-toggle="tab"><i class="fa fa-users"></i>Registered Parent</a></li>
                                                                 <!-- <li><a href="#admin-routes" data-toggle="tab"><i class="fa fa-map-marker"></i>Routes</a></li>
                                                                 <li><a href="#admin-reports" data-toggle="tab"><i class="fa fa-file"></i>Reports</a></li>
                                                                 <li><a href="#admin-settings" data-toggle="tab"><i class="fa fa-cog"></i>Settings</a></li >-->
                                                             </ul>
                                                             <div class="tab-content">
                                                                 <!-- Font Awesome Icons -->
-                                                                <div class="tab-pane active" id="admin-new-user">
+                                                                <div class="tab-pane active" id="parent-new">
                                                                     <div class="col-md-6">
                                                                         <div class="header">
                                                                             <h4 class="title">New Parent</h4>
@@ -768,265 +514,29 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <!-- <div class="tab-pane " id="admin-routes">
-                                                                    <div class="col-md-6" style="border-right: #000000 1px solid;">
+                                                                <div class="tab-pane" id="parent-register">
+                                                                    
+                                                                    <div class="col-md-12 ">
                                                                         <div class="header">
-                                                                            <h4 class="title">New Routes</h4>
-                                                                        </div>
-                                                                        <form>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">First Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter first name">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Last Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter other name">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Telephone</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter telephone number">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Enter email address">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputState">User type</label>
-                                                                                    <select id="inputState" class="form-control">
-                                                                                        <option selected>Choose...</option>
-                                                                                        <option>...</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputText">Username</label>
-                                                                                    <input type="text" class="form-control" id="inpuText" placeholder="Enter username">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Password</label>
-                                                                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Type password">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="password" class="form-control" id="inpuPassword4" placeholder="Retype password">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class=" form-row">
-                                                                                <div class="form-group col-md-3 pull-left"><input type="submit" value="Register" class="btn btn-default"/></div>
-                                                                                <div class="form-group col-md-3 pull-right"><input type="reset" value="Cancel" class="btn btn-default "/></div>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                    <div class="col-md-6 " style="border-left: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">Available System Administrators</h4>
+                                                                            <h4 class="title">Registered Parents</h4>
                                                                         </div>
                                                                         <div class="content table-responsive table-full-width">
-                                                                            <table class="table table-hover table-striped">
+                                                                            <table class="table table-hover table-bordered">
                                                                                 <thead>
                                                                                 <th>ID</th>
                                                                                 <th>Name</th>
-                                                                                <th>Salary</th>
-                                                                                <th>Country</th>
-                                                                                <th>City</th>
+                                                                                <th>Telephone</th>
+                                                                                <th>Email</th>
+                                                                                <th>Children</th>
                                                                                 </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
-                                                                                        <td>Dakota Rice</td>
-                                                                                        <td>$36,738</td>
-                                                                                        <td>Niger</td>
-                                                                                        <td>Oud-Turnhout</td>
-                                                                                    </tr>
+                                                                                <tbody id="parent-data">
+
                                                                                 </tbody>
                                                                             </table>
 
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="tab-pane " id="admin-reports">
-                                                                    <div class="col-md-6" style="border-right: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">Reports</h4>
-                                                                        </div>
-                                                                        <form>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">First Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter first name">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Last Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter other name">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Telephone</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter telephone number">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Enter email address">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputState">User type</label>
-                                                                                    <select id="inputState" class="form-control">
-                                                                                        <option selected>Choose...</option>
-                                                                                        <option>...</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputText">Username</label>
-                                                                                    <input type="text" class="form-control" id="inpuText" placeholder="Enter username">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Password</label>
-                                                                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Type password">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="password" class="form-control" id="inpuPassword4" placeholder="Retype password">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class=" form-row">
-                                                                                <div class="form-group col-md-3 pull-left"><input type="submit" value="Register" class="btn btn-default"/></div>
-                                                                                <div class="form-group col-md-3 pull-right"><input type="reset" value="Cancel" class="btn btn-default "/></div>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                    <div class="col-md-6 " style="border-left: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">Available System Administrators</h4>
-                                                                        </div>
-                                                                        <div class="content table-responsive table-full-width">
-                                                                            <table class="table table-hover table-striped">
-                                                                                <thead>
-                                                                                <th>ID</th>
-                                                                                <th>Name</th>
-                                                                                <th>Salary</th>
-                                                                                <th>Country</th>
-                                                                                <th>City</th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
-                                                                                        <td>Dakota Rice</td>
-                                                                                        <td>$36,738</td>
-                                                                                        <td>Niger</td>
-                                                                                        <td>Oud-Turnhout</td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="tab-pane " id="admin-settings">
-                                                                    <div class="col-md-6" style="border-right: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">New Routes</h4>
-                                                                        </div>
-                                                                        <form>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">First Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter first name">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Last Name</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter other name">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Telephone</label>
-                                                                                    <input type="text" class="form-control" id="inputText" placeholder="Enter telephone number">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Enter email address">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputState">User type</label>
-                                                                                    <select id="inputState" class="form-control">
-                                                                                        <option selected>Choose...</option>
-                                                                                        <option>...</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-12">
-                                                                                    <label for="inputText">Username</label>
-                                                                                    <input type="text" class="form-control" id="inpuText" placeholder="Enter username">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-row">
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputText">Password</label>
-                                                                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Type password">
-                                                                                </div>
-                                                                                <div class="form-group col-md-6">
-                                                                                    <label for="inputEmail4">Email</label>
-                                                                                    <input type="password" class="form-control" id="inpuPassword4" placeholder="Retype password">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class=" form-row">
-                                                                                <div class="form-group col-md-3 pull-left"><input type="submit" value="Register" class="btn btn-default"/></div>
-                                                                                <div class="form-group col-md-3 pull-right"><input type="reset" value="Cancel" class="btn btn-default "/></div>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                    <div class="col-md-6 " style="border-left: #000000 1px solid;">
-                                                                        <div class="header">
-                                                                            <h4 class="title">Available System Administrators</h4>
-                                                                        </div>
-                                                                        <div class="content table-responsive table-full-width">
-                                                                            <table class="table table-hover table-striped">
-                                                                                <thead>
-                                                                                <th>ID</th>
-                                                                                <th>Name</th>
-                                                                                <th>Salary</th>
-                                                                                <th>Country</th>
-                                                                                <th>City</th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>1</td>
-                                                                                        <td>Dakota Rice</td>
-                                                                                        <td>$36,738</td>
-                                                                                        <td>Niger</td>
-                                                                                        <td>Oud-Turnhout</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td>2</td>
-                                                                                        <td>Minerva Hooper</td>
-                                                                                        <td>$23,789</td>
-                                                                                        <td>Curaçao</td>
-                                                                                        <td>Sinaai-Waas</td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1340,6 +850,8 @@
                                                                         <div class="header">
                                                                             <h4 class="title">User Accounts Settings</h4>
                                                                         </div>
+                                                                        <div class="alert alert-inner alert-success alert-with-icon" id="user-setting-notify" data-notify="container">
+                                                                        </div>
                                                                         <div class="content table-responsive table-full-width">
                                                                             <table class="table table-default">
                                                                                 <thead>
@@ -1521,20 +1033,6 @@
                                                                                 <input type="text" class="form-control" id="idnewschool" placeholder="Enter School Name"/>
                                                                             </div><div class="form-group col-md-3 pull-right"><input type="submit" id="schoolsubmit" value="Add" class="btn btn-default"/></div>
                                                                         </div>
-                                                                        <!-- </div> -->
-                                                                        <!-- <div class="new-district">
-                                                                    <div class="header">
-                                                                        <h4 class="title">New District</h4>
-                                                                    </div>
-                                                                    <div class="alert alert-success alert-with-icon" id="child-notify" data-notify="container">
-                                                                                                            </div>
-                                                                        <div class=" form-row">
-                                                                            <div class="form-group col-md-9">
-                                                                        <!-- <label for="inputText">Telephone</label> -->
-                                                                        <!-- <input type="text" class="form-control" id="ptel" placeholder="Enter School Name">
-                                                                    </div><div class="form-group col-md-3 pull-right"><input type="submit" id="psubmit" value="Add" class="btn btn-default"/></div>
-                                                                </div>
-                                                                </div> -->
                                                                         <div class="new-division" bg-color="blue">
                                                                             <div class="header">
                                                                                 <h4 class="title">New sub-county</h4>

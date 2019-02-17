@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#submit').click(function() {
+     $('#submit').click(function() {
         $.post("pages/admin/new_user.php", {
             fname: $('#fname').val(),
             lname: $('#lname').val(),
@@ -7,7 +7,8 @@ $(document).ready(function() {
             email: $('#mail').val(),
             type: $('#user').val(),
             name: $('#username').val(),
-            passwd: $('#password').val()
+            passwd: $('#password').val(),
+            idschool: $('#userschool').val()
         }, function(data) {
 
             $('#admin-notify').html(data).show();
@@ -22,7 +23,7 @@ $(document).ready(function() {
         });
 
     });
-    $('#drv_submit').click(function() {
+     $('#drv_submit').click(function() {
         $.post("pages/driver/new_driver.php", {
             fname: $('#drvfname').val(),
             lname: $('#drvlname').val(),
@@ -40,7 +41,7 @@ $(document).ready(function() {
             // $('#driver-notify').html(data).fadeOut(3000);
         });
     });
-    $('#psubmit').click(function() {
+     $('#psubmit').click(function() {
         $.post("pages/parent/new_parent.php", {
             fname: $('#pfname').val(),
             lname: $('#plname').val(),
@@ -58,7 +59,7 @@ $(document).ready(function() {
             // $('#parent-notify').html(data).fadeOut(3000);
         });
     });
-    $('#chsubmit').click(function() {
+     $('#chsubmit').click(function() {
         $.post("pages/child/new_child.php", {
             fname: $('#chfname').val(),
             lname: $('#chlname').val(),
@@ -80,7 +81,7 @@ $(document).ready(function() {
             // $('#child-notify').html(data).fadeOut(3000);
         });
     });
-    $('#schoolsubmit').click(function() {
+     $('#schoolsubmit').click(function() {
         $.post("pages/settings/system/new_school.php", {
             name: $('#idnewschool').val()
         }, function(data) {
@@ -89,8 +90,7 @@ $(document).ready(function() {
             // $('#school-notify').html(data).fadeOut(3000);
         });
     });
-    $('.known-schools').load('pages/settings/system/select_school.php');
-    $('#divisionsubmit').click(function() {
+     $('#divisionsubmit').click(function() {
         $.post("pages/settings/system/new_division.php", {
             dist: $('#sub_dist').val(),
             division: $('#subcty').val()
@@ -100,7 +100,7 @@ $(document).ready(function() {
             $('#subcty').val('');
         });
     });
-    $('#villagesubmit').click(function() {
+     $('#villagesubmit').click(function() {
         $.post("pages/settings/system/new_village.php", {
             dist: $('#vil_dist').val(),
             division: $('#vil_sub').val(),
@@ -112,18 +112,7 @@ $(document).ready(function() {
             $('#vil').val('');
         });
     });
-    $('#loginsubmit').click(function() {
-        $.post("pages/admin/authentication/login.php", {
-            user: $('#loginuser').serialize(),
-            password: $('#loginpassword').serialize()
-        }, function(data) {
-            if (data == $('#loginuser').val()) {
-                window.location = 'dashboard.php';
-            } else {
-                alert(data);
-            }
-        });
-    });
+     $('.known-schools').load('pages/settings/system/select_school.php');
 
     /*========================Load data when window loads============================*/
     $('#admin-data').load('pages/admin/select_user.php');
@@ -143,18 +132,31 @@ $(document).ready(function() {
         $('.driver-data').load('pages/settings/driver/select_driver.php');
         $('.parent-account-data').load('pages/settings/parent/select_parent.php');
         $('.location-data').load('pages/settings/system/select_location.php');
-        // $('.chparent').load('pages/other/select/select_parent.php');
-        // $('.district').load('pages/other/select/select_district.php'); 
-        // $('.division').load('pages/other/select/select_division.php'); 
-        // $('.cell').load('pages/other/select/select_village.php'); 
-        // $('.school').load('pages/other/select/select_school.php');
         $('.child-data').load('pages/child/select_child.php');
     }, 5000);
-});
-$(document).ready(function() {
     $('.alert').click(function() {
         $(this).hide();
     });
+$('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+
+        localStorage.setItem('activeTab', $(e.target).attr('href'));
+
+    });
+    var activeTab = localStorage.getItem('activeTab');
+
+    if(activeTab){
+
+        $('#myTab a[href="' + activeTab + '"]').tab('show');
+
+    };
+
+
+
+
+
+
+    
+   
 });
 
 
